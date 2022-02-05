@@ -3,12 +3,15 @@ import { withRouter } from 'react-router-dom';
 
 import './menu-item.scss';
 
+// React doesn't want you to pass props between componenets
+// use withRouter to access them. history in this case
 const MenuItem = ({ title, imageUrl, size, history, linkUrl }) => (
   <div
     className={`${size} menu-item`}
     onClick={() => history.push(`${linkUrl}`)}>
     <div
       className='background-image'
+      // inline style css
       style={{
         backgroundImage: `url(${imageUrl})`
       }}
