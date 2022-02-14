@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user-actions'
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import {HomePage} from './pages/homepage/homepage';
 import SignInAndUp from './pages/sign-in-and-up/sign-in-and-up';
@@ -15,10 +15,10 @@ import './App.css';
 
 
 class App extends React.Component {
-  unsubscribeFromAuth = null
+  unsubscribeFromAuth = null;
 
   componentDidMount() {
-    const { setCurrentUser } = this.props
+    const { setCurrentUser } = this.props;
 
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
@@ -48,7 +48,15 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/' component={HomePage} />
             <Route path='/shop' component={ShopPage} />
-            <Route path='/signin' component={SignInAndUp} />
+            <Route exact path='/signin' render={() =>
+            // Stop users to go to signin page via url
+              this.props.currentUser ? (
+                <Redirect to='/' />
+              ) : (
+                <SignInAndUp />
+              )
+            }
+            />
           </Switch>
         </div>
       </BrowserRouter>
@@ -56,8 +64,13 @@ class App extends React.Component {
   }
 }
 
-const mapDispatch = dispatch => ({
+const mapStateProps = ({ user }) => ({
+  currentUser: user.currentUser
+});
+
+const mapDispatchProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 });
 
-export default connect(null, mapDispatch)(App);
+// the connect function is this specific order!!
+export default connect(mapStateProps, mapDispatchProps)(App);
