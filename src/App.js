@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setCurrentUser } from './redux/user/user-actions'
+import { setCurrentUser } from './redux/user/user-actions';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
-import {HomePage} from './pages/homepage/homepage';
+import HomePage from './pages/homepage/homepage';
 import SignInAndUp from './pages/sign-in-and-up/sign-in-and-up';
 import ShopPage from './pages/shop/shop';
 
