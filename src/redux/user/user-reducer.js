@@ -1,5 +1,6 @@
 import { UserActionTypes } from './user-types';
 
+// This works as the mutations in Vuex or other languages.
 const INITIAL_STATE = {
   currentUser: null
 };

@@ -1,6 +1,8 @@
 import React from 'react';
+
 import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user-actions';
+
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import HomePage from './pages/homepage/homepage';
@@ -64,10 +66,12 @@ class App extends React.Component {
   }
 }
 
+// initial state
 const mapStateProps = ({ user }) => ({
   currentUser: user.currentUser
 });
 
+// action
 const mapDispatchProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 });
