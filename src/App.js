@@ -11,8 +11,10 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import HomePage from './pages/homepage/homepage';
 import SignInAndUp from './pages/sign-in-and-up/sign-in-and-up';
 import ShopPage from './pages/shop/shop';
+import CheckoutPage from './pages/checkout/checkout';
 
 import Header from './components/header/header';
+// import Checkout from './components/checkout/checkout';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
@@ -53,8 +55,10 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/' component={HomePage} />
             <Route path='/shop' component={ShopPage} />
+            <Route exact path='/checkout' component={CheckoutPage} />
             <Route exact path='/signin' render={() =>
             // Stop users to go to signin page via url
+            // when log in already
               this.props.currentUser ? (
                 <Redirect to='/' />
               ) : (
