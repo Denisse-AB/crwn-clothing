@@ -1,5 +1,5 @@
 // Not necessary, redux will check integers and if they stays
-// the same it will not rerender the components
+// the same it will not rerender the component
 import { createSelector } from 'reselect';
 
 const selectCart = state => state.cart;
