@@ -1,3 +1,7 @@
+// Directory reducer doesn't have actions and types.
+// This is only a storage for homepage data it will be output throught
+// directory selector
+
 const INITIAL_STATE = {
   sections: [
     {
