@@ -1,3 +1,6 @@
+// lodash memoization for url params, if collectionUrlParams recieves the
+// same params dont't rerun the const function.
+import memoize from 'lodash.memoize';
 import { createSelector } from 'reselect';
 
 // root reducer obj
@@ -8,3 +11,18 @@ export const selectCollection = createSelector(
   // collections, initial state reducer
   shop => shop.collections
 );
+// converts array into and object for shop page
+export const selectCollectionForPreview = createSelector(
+  [selectCollection],
+  collections => Object.keys(collections).map(key => collections[key])
+)
+
+// filter collection by category, ex. hats, jackets
+export const selectCollectionitem = memoize((collectionUrlParams) =>
+  createSelector(
+    [selectCollection],
+    // for large stores find() becomes unproductive, it will slow
+    // down your app
+    collections => collections[collectionUrlParams]
+    )
+  );
