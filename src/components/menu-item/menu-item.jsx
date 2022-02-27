@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import './menu-item.scss';
 
-// React doesn't want you to pass props between componenets
+// React doesn't want you to pass props between components
 // use withRouter to access them. history in this case
 const MenuItem = ({ title, imageUrl, size, history, linkUrl }) => (
   <div

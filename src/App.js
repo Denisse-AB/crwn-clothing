@@ -14,7 +14,6 @@ import ShopPage from './pages/shop/shop';
 import CheckoutPage from './pages/checkout/checkout';
 
 import Header from './components/header/header';
-// import Checkout from './components/checkout/checkout';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 

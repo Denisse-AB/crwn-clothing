@@ -7,7 +7,7 @@ import CustomButton from "../custom-button/custom-button";
 
 import '../collection-item/collection-item.scss';
 
-// use return comp. function when dealing with multiple objects
+// use the return statement when dealing with multiple objects.
 const CollectionItem = ({ item, addItem}) => {
   const { imageUrl, name, price } = item;
   return (
