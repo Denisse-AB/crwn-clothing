@@ -11,7 +11,6 @@ const StripeCheckoutButton = ({ price }) => {
     alert('Payment Succesful!')
   }
 
-  // TODO: CHECK BITCOIN
   return (
     <StripeCheckout
       label='Pay Now'
