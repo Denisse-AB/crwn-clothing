@@ -11,11 +11,12 @@ export const selectCollection = createSelector(
   // collections, initial state reducer
   shop => shop.collections
 );
-// converts array into and object for shop page
+
+// converts array of products (data.js) into and object for shop page
 export const selectCollectionForPreview = createSelector(
   [selectCollection],
   collections => Object.keys(collections).map(key => collections[key])
-)
+);
 
 // filter collection by category, ex. hats, jackets
 export const selectCollectionitem = memoize((collectionUrlParams) =>
