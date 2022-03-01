@@ -4,7 +4,7 @@ import 'firebase/compat/auth';
 
 
 const config = {
-  apiKey: process.env.REACT_APP_API_KEY,
+  apiKey: 'AIzaSyCFOlKe5Xr9oSLKCzo1A5KM4p7znjTfY1Q',
   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
   projectId: process.env.REACT_APP_PROJECT_ID,
   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
