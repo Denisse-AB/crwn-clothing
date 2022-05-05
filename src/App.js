@@ -17,7 +17,7 @@ import Header from './components/header/header';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
-import './App.css';
+import { GlobalStyle } from './global-style';
 
 
 class App extends React.Component {
@@ -50,6 +50,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div>
+          <GlobalStyle />
           <Header />
           <Switch>
             <Route exact path='/' component={HomePage} />
