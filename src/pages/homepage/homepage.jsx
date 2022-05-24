@@ -4,7 +4,7 @@ import { HomePageContainer } from './homepage-style';
 
 // import './homepage.scss';
 
-// Functional component, no return statement and no {}
+// Functional component
 const HomePage = () => (
   <HomePageContainer >
     <Directory />
@@ -15,7 +15,7 @@ export default HomePage;
 
 
 /*
-after style-components
+before style-components
 
 const HomePage = () => (
   <div className='homepage'>
