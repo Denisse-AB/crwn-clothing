@@ -37,7 +37,7 @@ class SignIn extends React.Component {
 
   render() {
     return(
-      <div className="sign-in">
+      <div className="sign-in mx-8 tablet:w-64 laptop:w-96">
         <h2>I already have and account</h2>
         <span>Sign in with your email and password</span>
 
@@ -60,7 +60,7 @@ class SignIn extends React.Component {
           />
           {/* isGoogleSignIn is a style binding that will change
            the color depending if the user is sign in or not */}
-          <div className="buttons">
+          <div className="buttons md:flex">
             <CustomButton
               type="submit"
             >

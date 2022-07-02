@@ -3,7 +3,10 @@ import React from 'react';
 import { CustomButtonContainer } from './custom-button-style';
 
 const CustomButton = ({ children, ...props }) => (
-  <CustomButtonContainer {...props}>{children}</CustomButtonContainer>
+  <CustomButtonContainer
+    className='mt-2 sm:mx-auto sm:w-1 sm:p-0'
+    {...props}>{children}
+  </CustomButtonContainer>
 );
 
 export default CustomButton;
